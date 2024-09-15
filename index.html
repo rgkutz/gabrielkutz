@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Gabriel Kutz </title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Estilo para el fondo con estrellas */
+        body {
+            background-color: #000; /* Fondo negro */
+        }
+
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background: white;
+            animation: twinkling 1.5s infinite alternate;
+        }
+
+        @keyframes twinkling {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Generar estrellas en el fondo */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        /* Estilo para animación fade-in */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Estilo para el formulario de contacto desplegable */
+        #contactForm {
+            display: none;
+        }
+        #contactForm.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300 antialiased">
+    <div class="stars">
+        <!-- Generación de estrellas -->
+        <script>
+            for (let i = 0; i < 100; i++) {
+                let star = document.createElement('div');
+                star.className = 'star';
+                let size = Math.random() * 3 + 1; // Tamaño aleatorio
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.top = `${Math.random() * 100}vh`;
+                star.style.left = `${Math.random() * 100}vw`;
+                star.style.animationDuration = `${Math.random() * 1 + 0.5}s`; // Duración aleatoria
+                document.querySelector('.stars').appendChild(star);
+            }
+        </script>
+    </div>
+    <!-- Navbar -->
+    <nav class="bg-gray-800 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="#" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-white text-lg">Gabriel Kutz</span>
+                        </a>
+                    </div>
+                    <!-- Primary Navbar items -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="#" class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold">Inicio</a>
+                        <a href="#proyectos" class="py-4 px-2 text-gray-300 font-semibold hover:text-green-500 transition duration-300">Proyectos</a>
+                        <a href="#docencia" class="py-4 px-2 text-gray-300 font-semibold hover:text-green-500 transition duration-300">Docencia</a>
+                        <a href="#contacto" class="py-4 px-2 text-gray-300 font-semibold hover:text-green-500 transition duration-300">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <div class="bg-gray-800 py-20 relative z-10">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold fade-in">¡Bienvenidos a mi portafolio!</h1>
+            <p class="mt-4 text-lg text-gray-400 fade-in">Ingeniero en Sistemas y Docente especializado en Python, desarrollo móvil, y más.</p>
+            <a href="#proyectos" class="mt-8 inline-block bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-400 transition duration-300">Ver mis proyectos</a>
+        </div>
+    </div>
+    <!-- Proyectos Section -->
+    <section id="proyectos" class="bg-gray-900 py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-8">Proyectos Destacados</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Proyecto 1 -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-semibold text-white">Proyecto Python</h3>
+                    <p class="mt-2 text-gray-400">Análisis de datos con Python utilizando Pandas y Matplotlib.</p>
+                </div>
+                <!-- Proyecto 2 -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-semibold text-white">App Móvil con Flutter</h3>
+                    <p class="mt-2 text-gray-400">Desarrollo de una app móvil conectada a Firebase.</p>
+                </div>
+                <!-- Proyecto 3 -->
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+                    <h3 class="text-xl font-semibold text-white">Simulador de Procesos en Java</h3>
+                    <p class="mt-2 text-gray-400">Simulación de procesos con Java y GUI en Swing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Docencia Section -->
+    <section id="docencia" class="bg-gray-800 py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-8">Docencia</h2>
+            <p class="text-gray-400">Imparto diversas materias relacionadas con la programación, incluyendo Python, desarrollo móvil con Flutter y más.</p>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contacto" class="bg-gray-900 py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-white mb-8">Contacto</h2>
+            <button onclick="toggleForm()" class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-400 transition duration-300">Escríbeme</button>
+            <form id="contactForm" class="mt-8 space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <input type="text" class="border-gray-700 p-3 w-full bg-gray-800 text-gray-300" placeholder="Tu nombre">
+                    <input type="email" class="border-gray-700 p-3 w-full bg-gray-800 text-gray-300" placeholder="Tu email">
+                </div>
+                <textarea class="border-gray-700 p-3 w-full bg-gray-800 text-gray-300" rows="4" placeholder="Tu mensaje"></textarea>
+                <button type="submit" class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-400 transition duration-300">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6 mt-10">
+        <div class="container mx-auto text-center text-white">
+            <p>© Gabriel Kutz 2024 - Todos los derechos reservados</p>
+        </div>
+    </footer>
+    <script>
+        function toggleForm() {
+            var form = document.getElementById('contactForm');
+            form.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
