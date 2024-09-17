@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Gabriel Kutz</title>
-    <link rel="icon" href="/D:/gabrielweb/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./D:/gabrielweb/favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Font Awesome -->
     <style>
@@ -59,6 +59,7 @@
             display: block;
         }
     </style>
+    <script>script.js</script>
 </head>
 <body class="bg-gray-900 text-gray-300 antialiased">
     <div class="stars">
@@ -145,12 +146,12 @@
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-white mb-8">Contacto</h2>
             <button onclick="toggleForm()" class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-400 transition duration-300">Escríbeme</button>
-            <form id="contactForm" class="mt-8 space-y-8">
+            <form id="contactForm" class="mt-8 space-y-8" style="display: none;">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <input type="text" class="border-gray-700 p-3 w-full bg-gray-800 text-gray-300" placeholder="Tu nombre">
-                    <input type="email" class="border-gray-700 p-3 w-full bg-gray-800 text-gray-300" placeholder="Tu email">
+                    <input type="text" name="nombre" class="border-gray-700 p-3 w-full bg-gray-800 text-gray-300" placeholder="Tu nombre" required>
+                    <input type="email" name="email" class="border-gray-700 p-3 w-full bg-gray-800 text-gray-300" placeholder="Tu email" required>
                 </div>
-                <textarea class="border-gray-700 p-3 w-full bg-gray-800 text-gray-300" rows="4" placeholder="Tu mensaje"></textarea>
+                <textarea name="mensaje" class="border-gray-700 p-3 w-full bg-gray-800 text-gray-300" rows="4" placeholder="Tu mensaje" required></textarea>
                 <button type="submit" class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-400 transition duration-300">Enviar</button>
             </form>
         </div>
